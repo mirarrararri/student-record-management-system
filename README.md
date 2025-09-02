@@ -17,5 +17,5 @@ Purpose:
 - Serve as a our final project in Computer Programming, showcasing teamwork, problem-solving, and coding skills.
 
 
-Author/Credits
+Author/Credits:
 This project was developed by our group as a Final Project in Computer Programming.
