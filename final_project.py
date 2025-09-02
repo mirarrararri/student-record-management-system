@@ -1,8 +1,8 @@
 import os
 
-# Global dictionary to store all student data
+#Global dictionary to store all student data
 students_data = {}
-
+#function to display menu
 def display_menu():
     """Displays the main menu with formatted layout"""
     # Using string multiplication for consistent formatting
@@ -17,12 +17,12 @@ def display_menu():
     print(" " * 10 + "6. Generate Report")
     print(" " * 10 + "7. Exit")
     print("=" * 50)
-
+#function to continue
 def press_enter_to_continue():
     """Helper function to pause execution and wait for user input"""
     input("" \
     "...")
-
+#function to load student
 def load_students(filename):
     """
     Loads student data from a file into global students_data dictionary
@@ -59,7 +59,7 @@ def load_students(filename):
         students_data = {}
     except Exception as e:
         print(f"Error loading data from file: {e}")
-
+#function to save student data
 def save_students(students_data, filename):
     """
     Saves student data from dictionary to file
@@ -77,7 +77,7 @@ def save_students(students_data, filename):
         print("\nData saved successfully.\n")
     except IOError as e:
         print(f"Error saving data: {e}")
-
+#function to add student
 def add_student(students_data):
     """
     Adds a new student to the system
@@ -115,7 +115,7 @@ def add_student(students_data):
     except ValueError as e:
         print(f"Error: {e} Please enter valid input.")
         return False
-
+#function to update grade
 def update_grade(students_data):
     """
     Updates or adds a grade for specific student and subject
@@ -156,7 +156,7 @@ def update_grade(students_data):
     students_data[student_id]['grades'][subject] = new_grade_int
     print(f"Grade updated for {students_data[student_id]['name']} in {subject}.")
     return True
-
+#function to search student
 def search_student_records(students_data):
     """
     Searches for student records by ID and displays detailed information
@@ -193,7 +193,7 @@ def search_student_records(students_data):
         print()
     else:
         print("No matching students found.")
-
+#function to delete student record
 def delete_student_record(students_data):
     """
     Deletes a student record after confirmation
@@ -220,7 +220,7 @@ def delete_student_record(students_data):
         print("Student not found.")
         return False
         
-    # Confirm deletion
+    #Confirm deletion
     confirm = input(f"Are you sure you want to delete student '{students_data[matched_id]['name']}' (ID: {matched_id})? (y/n): ").strip().lower()
     if confirm == 'y':
         del students_data[matched_id]
@@ -229,7 +229,7 @@ def delete_student_record(students_data):
     else:
         print("Deletion cancelled.")
         return False
-
+#function to calculate the average grade
 def calculate_average_grade(students_data):
     """
     Calculates and displays average grade for student or subject
@@ -276,7 +276,7 @@ def calculate_average_grade(students_data):
             print("No grades available for this subject.")
     else:
         print("Invalid choice. Please enter 'student' or 'subject'.")
-
+#function to generate report
 def generate_report(students_data):
     """
     Generates a detailed report of all students and their grades
@@ -297,7 +297,7 @@ def generate_report(students_data):
         grades_str = ', '.join([f"{subject}: {grade}" for subject, grade in grades.items()]) if grades else "No grades"
         print(f"ID: {student_id}\nName: {info['name']}\nGrades: {grades_str}\nAverage: {average:.2f}\n{'-'*70}")
     print()
-
+#function for main program loop
 def main_program_loop():
     """
     Main program loop that handles menu navigation and function calls
