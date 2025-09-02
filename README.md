@@ -10,7 +10,7 @@ Features:
 - Generate Report– View all student records in a formatted report.
 - File Storage– Data is automatically saved to grades.txt.
 
-The main purpose of this program is to:
+Purpose:
 - Practice and apply fundamental programming concepts such as loops, conditionals, functions, and error handling.
 - Demonstrate the use of persistent data storage through file handling.
 - Provide a practical tool for organizing and analyzing student performance in multiple subjects.
